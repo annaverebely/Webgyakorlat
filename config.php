@@ -1,19 +1,13 @@
 <?php
 $host = "localhost";
-$dbname = "inventory_db"; 
-$username = "root";       
-$password = "";           
+$dbname = "inventory_db";
+$user = "root";
+$pass = ""; // XAMPP-nál alapértelmezetten üres
 
 try {
-    // A DSN-ben adjuk meg a charset=utf8-at
-    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    
-    // Ez biztosítja, hogy a magyar ékezetek ne "krix-kraxok" legyenek
-    $conn->exec("set names utf8"); 
-    
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Sikerült a csatlakozás!"; 
 } catch(PDOException $e) {
-    die("Hiba: " . $e->getMessage());
+    // Itt ne legyen echo! Csak dobjunk egy hibát, amit az API elkap.
+    throw new Exception("Kapcsolódási hiba: " . $e->getMessage());
 }
-?>
