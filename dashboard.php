@@ -55,8 +55,7 @@ if (!isset($_SESSION['user_id'])) {
                             <th>Név</th>
                             <th>Kategória</th>
                             <th>Mennyiség</th>
-                            <th>Állapot</th>
-                            <th>Műveletek</th>
+                            <th>Utolsó módosítás</th> <th>Műveletek</th>
                         </tr>
                     </thead>
                     <tbody id="inventoryTable">
@@ -83,19 +82,29 @@ async function loadInventory() {
             return;
         }
 
-        items.forEach(item => {
-            tbody.innerHTML += `
-                <tr>
-                    <td>${item.name}</td>
-                    <td>${item.category}</td>
-                    <td>${item.quantity} db</td>
-                    <td><span class="badge bg-success">${item.status}</span></td>
-                    <td>
-                        <button class="btn btn-warning btn-sm" onclick='editItem(${JSON.stringify(item)})'>Módosítás</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteItem(${item.id})">Törlés</button>
-                    </td>
-                </tr>`;
-        });
+   items.forEach(item => {
+    // Formázás: csak év, hónap, nap, óra, perc (másodperc nélkül)
+    const date = new Date(item.updated_at).toLocaleString('hu-HU', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    
+    tbody.innerHTML += `
+        <tr>
+            <td>${item.name}</td>
+            <td>${item.category}</td>
+            <td><strong>${item.quantity} db</strong></td>
+            <td class="small text-muted">${date}</td>
+            <td>
+                <button class="btn btn-warning btn-sm" onclick='editItem(${JSON.stringify(item)})'>Módosítás</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteItem(${item.id})">Törlés</button>
+            </td>
+        </tr>`;
+});
+
     } catch (error) {
         console.error("Hiba az adatok lekérésekor:", error);
     }
