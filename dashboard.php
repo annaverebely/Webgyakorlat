@@ -10,14 +10,14 @@ if (!isset($_SESSION['user_id'])) {
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Eszközleltár - Dashboard</title>
+    <title>Eszközleltár</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 
     <nav class="navbar navbar-dark bg-dark mb-4">
         <div class="container">
-            <span class="navbar-brand">Leltár Rendszer</span>
+            <span class="navbar-brand">Eszközleltár rendszer</span>
             <span class="text-white">Üdv, <?php echo $_SESSION['username']; ?>! | <a href="logout.php" class="btn btn-outline-danger btn-sm">Kilépés</a></span>
         </div>
     </nav>
@@ -83,7 +83,7 @@ async function loadInventory() {
         }
 
    items.forEach(item => {
-    // Formázás: csak év, hónap, nap, óra, perc (másodperc nélkül)
+    // Idő formázása másodpercek nélkül
     const date = new Date(item.updated_at).toLocaleString('hu-HU', {
         year: 'numeric',
         month: '2-digit',
@@ -96,8 +96,7 @@ async function loadInventory() {
         <tr>
             <td>${item.name}</td>
             <td>${item.category}</td>
-            <td><strong>${item.quantity} db</strong></td>
-            <td class="small text-muted">${date}</td>
+            <td>${item.quantity} db</td> <td class="small text-muted">${date}</td>
             <td>
                 <button class="btn btn-warning btn-sm" onclick='editItem(${JSON.stringify(item)})'>Módosítás</button>
                 <button class="btn btn-danger btn-sm" onclick="deleteItem(${item.id})">Törlés</button>

@@ -8,23 +8,23 @@
 </head>
 <body class="bg-light">
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-4 card p-4 shadow-sm">
-            <h3 class="text-center mb-4">Regisztráció</h3>
-            <form id="regForm">
-                <div class="mb-3">
-                    <input type="text" id="regUser" class="form-control" placeholder="Felhasználónév" required>
-                </div>
-                <div class="mb-3">
-                    <input type="password" id="regPass" class="form-control" placeholder="Jelszó" required>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Regisztráció</button>
-            </form>
+<div class="container mt-5" style="max-width: 400px;">
+    <div class="card shadow-sm p-4">
+        <h3 class="text-center mb-4">Regisztráció</h3>
+        
+        <form id="regForm">
+            <input type="text" id="regUser" class="form-control mb-2" placeholder="Felhasználónév" required>
+            <input type="password" id="regPass" class="form-control mb-2" placeholder="Jelszó" required>
             
-            <div id="regMessage" class="mt-3"></div> 
+            <button type="submit" class="btn btn-primary w-100 mt-2">Regisztráció</button>
+        </form>
+        
+        <div id="regMessage" class="mt-3 text-center"></div>
 
-            <p class="mt-3 text-center small">Már van fiókod? <a href="login.php">Jelentkezz be!</a></p>
+        <div class="mt-4 text-center border-top pt-3">
+            <p class="small text-muted mb-0">
+                Már van fiókod? <a href="login.php" class="text-primary">Jelentkezz be!</a>
+            </p>
         </div>
     </div>
 </div>
@@ -48,11 +48,9 @@ document.getElementById('regForm').addEventListener('submit', async function(e) 
         const result = await response.json();
         const msgDiv = document.getElementById('regMessage');
         
-        // Üzenet megjelenítése
         msgDiv.innerText = result.message;
-        msgDiv.className = result.success ? "alert alert-success" : "alert alert-danger";
+        msgDiv.className = "alert " + (result.success ? "alert-success" : "alert-danger") + " mt-3";
 
-        // HA SIKERES, ÁTDOBJUK A LOGINRA 1.5 MÁSODPERC MÚLVA
         if (result.success) {
             setTimeout(() => {
                 window.location.href = 'login.php';
