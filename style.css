@@ -1,0 +1,398 @@
+body.auth-page {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:
+        linear-gradient(rgba(10, 20, 40, 0.65), rgba(10, 20, 40, 0.65)),
+        url('images/bg.png') center/cover no-repeat;
+    color: #1f2937;
+}
+
+.auth-wrapper {
+    min-height: 100vh;
+}
+
+.auth-card {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: 0.3s ease;
+    padding: 10px;
+}
+
+.auth-card:hover {
+    transform: translateY(-3px);
+}
+
+.auth-left {
+    background: rgba(15, 23, 42, 0.75);
+    color: #ffffff;
+    backdrop-filter: blur(4px);
+}
+
+.brand-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.auth-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.auth-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.92);
+    margin-bottom: 0;
+}
+
+.feature-list {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.form-box {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.form-title {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.custom-input {
+    border-radius: 14px;
+    padding: 14px 16px;
+    border: 1px solid #dbe3f0;
+    box-shadow: none;
+    transition: 0.2s ease;
+}
+
+.custom-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15);
+}
+
+.custom-btn {
+    background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 14px;
+    padding: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.2s ease;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.custom-btn:hover {
+    transform: translateY(-1px);
+    opacity: 0.96;
+    color: #ffffff;
+}
+
+.custom-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.custom-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+    .auth-left {
+        padding: 32px 24px !important;
+    }
+
+    .bg-white {
+        padding: 32px 24px !important;
+    }
+
+    .auth-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* FŐOLDAL */
+
+.landing-navbar {
+    background: rgba(15, 23, 42, 0.78);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-landing {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 650px;
+}
+
+.hero-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.92);
+    max-width: 620px;
+}
+
+.info-mini-card {
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 18px;
+    padding: 18px;
+    backdrop-filter: blur(4px);
+    height: 100%;
+}
+
+.info-mini-card h5 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.info-mini-card p {
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.feature-section {
+    background: #f8fafc;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.section-text {
+    color: #64748b;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    transition: 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-card h4 {
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.landing-footer {
+    background: #0f172a;
+    color: rgba(255,255,255,0.78);
+    padding: 24px 0;
+}
+
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+}
+
+/* BEJELENTKEZÉS */
+
+.auth-wrapper {
+    min-height: 100vh;
+}
+
+.login-card-simple {
+    max-width: 320px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+body.login-page {
+    background:
+        linear-gradient(rgba(10, 20, 40, 0.55), rgba(10, 20, 40, 0.75)),
+        url('images/irodaTar2.png') center/cover no-repeat fixed;
+}
+
+/* RÓLUNK OLDAL, KAPCSOLAT OLDAL */
+
+.subpage-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.about-content {
+    max-width: 1100px;
+    padding: 20px 0;
+}
+
+.subpage-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #cfd8ed;
+}
+
+.subpage-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #bad2f4;
+}
+
+.contact-info-box {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 24px;
+    height: 100%;
+}
+
+.contact-info-box p {
+    color: #b6d0f5;
+    margin-bottom: 10px;
+}
+
+.map-box {
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    background: #fff;
+}
+
+@media (max-width: 767px) {
+    .subpage-card {
+        padding: 24px;
+    }
+
+    .subpage-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* KÉP CSÍK A RÓLUNKON */
+
+.image-strip {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+    margin-top: 40px;
+    overflow: hidden;
+}
+
+.image-strip img {
+    flex: 1 1 0;
+    width: 100%;
+    min-width: 0;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    border-radius: 14px;
+    filter: brightness(0.9);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.image-strip img:hover {
+    filter: brightness(1);   
+}
+
+@media (max-width: 768px) {
+    .image-strip {
+        overflow-x: auto;
+    }
+
+    .image-strip img {
+        flex: 0 0 180px;
+        height: 110px;
+    }
+}
+
+/* KAPCSOLAT OLDAL */
+
+.subpage-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.subpage-card {
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+
+.subpage-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #41588e;
+}
+
+.contact-info-box {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.contact-info-box h4 {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.contact-info-box p {
+    color: #334155;
+    margin-bottom: 10px;
+}
+
+.map-box {
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
+    background: #fff;
+}

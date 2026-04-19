@@ -2,29 +2,35 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bejelentkezés</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
-<body class="bg-light"> <div class="container mt-5" style="max-width: 400px;">
-        <div class="card shadow-sm p-4">
-            <h3 class="text-center mb-4">Bejelentkezés</h3>
-            
+<body class="login-page auth-page">
+
+<div class="container auth-wrapper d-flex align-items-center justify-content-center">
+    <div class="auth-card login-card-simple p-4">
+
+        <div class="form-box">
+            <h3 class="form-title text-center mb-3">Bejelentkezés</h3>
+
             <form id="loginForm">
-                <input type="text" id="logUser" class="form-control mb-2" placeholder="Felhasználónév" required>
-                <input type="password" id="logPass" class="form-control mb-2" placeholder="Jelszó" required>
-                
-                <button type="submit" class="btn btn-success w-100 mt-2">Belépés</button>
+                <input type="text" id="logUser" class="form-control custom-input mb-3" placeholder="Felhasználónév" required>
+                <input type="password" id="logPass" class="form-control custom-input mb-3" placeholder="Jelszó" required>
+
+                <button type="submit" class="btn custom-btn w-100">Belépés</button>
             </form>
 
             <div id="loginMsg" class="mt-3 text-center"></div>
 
-            <div class="mt-4 text-center border-top pt-3">
-                <p class="small text-muted mb-0">
-                    Nincs még fiókod? <a href="index.php" class="text-primary">Regisztrálj itt!</a>
-                </p>
+            <div class="text-center mt-3">
+                <a href="index.php#regisztracio" class="custom-link">Regisztráció</a>
             </div>
         </div>
+
     </div>
+</div>
 
     <script>
     document.getElementById('loginForm').addEventListener('submit', async (e) => {

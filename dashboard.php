@@ -17,9 +17,10 @@ if (!isset($_SESSION['user_id'])) {
 
     <nav class="navbar navbar-dark bg-dark mb-4">
         <div class="container">
-            <span class="navbar-brand">Eszközleltár rendszer</span>
+            <span class="navbar-brand">IrodaTÁR - Eszközleltár rendszer</span>
             <span class="text-white">Üdv, <?php echo $_SESSION['username']; ?>! | <a href="logout.php" class="btn btn-outline-danger btn-sm">Kilépés</a></span>
         </div>
+
     </nav>
 
     <div class="container">
